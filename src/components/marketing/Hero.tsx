@@ -1,21 +1,11 @@
 'use client'
 import { smoothScrollTo } from "@/lib/smoothscroll";
-import gsap from "gsap";
+import { HeroProps } from "@/types";
 import { ArrowRight } from "lucide-react";
-import { useEffect, useRef } from "react";
 
-const Hero: React.FC = () => {
-    const headerRef = useRef<HTMLElement>(null);
-    useEffect(() => {
-        const tl = gsap.timeline({ defaults: { ease: 'expo.out' } }); // Changed ease for more impact
-        tl.fromTo('.hero-bg-image', { scale: 1.1, opacity: 0.7 }, { scale: 1, opacity: 0.3, duration: 2.5 })
-            .fromTo('.hero-title-word',
-                { opacity: 0, y: 80, skewY: 7 },
-                { opacity: 1, y: 0, skewY: 0, duration: 1, stagger: 0.1, delay: -1.8 } // Stagger for word by word
-            )
-            .fromTo('.hero-subtitle', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.9 }, "-=0.6")
-            .fromTo('.hero-cta-button', { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.9, ease: 'back.out(2)' }, "-=0.5");
-    }, []);
+
+
+const Hero: React.FC<HeroProps> = ({ headerRef }) => {
 
     return (
         <section
@@ -36,7 +26,7 @@ const Hero: React.FC = () => {
                     <span className="hero-title-word inline-block">Dream.</span>
                 </h1>
                 <p className="hero-subtitle text-lg sm:text-xl md:text-2xl mb-12 max-w-2xl mx-auto text-slate-200 drop-shadow-lg leading-relaxed">
-                    Embark on an unforgettable journey through snow-capped peaks and serene valleys with HimachalRide&apos;s premium taxi services.
+                    Embark on an unforgettable journey through snow-capped peaks and serene valleys with HimaGo&apos;s premium taxi services.
                 </p>
                 <a
                     href="#contact"

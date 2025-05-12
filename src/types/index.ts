@@ -1,3 +1,6 @@
+export interface HeroProps {
+    headerRef: React.RefObject<HTMLElement>;
+}
 export interface ServiceCardProps {
   icon: React.ElementType;
   title: string;
@@ -25,4 +28,8 @@ export interface WhyChooseItemProps {
   icon: React.ElementType;
   title: string;
   description: string;
+}
+
+export interface HomeProps {
+  headerRef: React.RefObject<HTMLElement>;
 }

@@ -1,5 +1,5 @@
 'use client'
-import { ServiceCardProps } from "@/types";
+import {  ServiceCardProps } from "@/types";
 import gsap from "gsap";
 import { CalendarDays, Car, CheckCircle, MapPin } from "lucide-react";
 import { useEffect } from "react";
@@ -21,7 +21,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, descriptio
 );
 
 // --- SERVICES COMPONENT ---
-const Services: React.FC = () => {
+const Services: React.FC = ()  => {
   useEffect(() => {
     gsap.from('.service-card-item', {
       opacity: 0,
