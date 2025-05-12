@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import ClientLayout from "@/components/base/ClientLayout";
 import React from "react";
 
 
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: "Book you ride now",
 };
 
-export default function RootLayout({
+export default function AdminLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -30,7 +30,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="font-sans antialiased text-slate-700 bg-white selection:bg-sky-500 selection:text-white overflow-x-hidden">
+          <ClientLayout>
+            {children}
+         
+          </ClientLayout>
+        </div>
       </body>
     </html>
   );

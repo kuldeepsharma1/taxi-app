@@ -1,9 +1,9 @@
 'use client'
 import { DestinationProps } from "@/types";
-import gsap from "gsap";
+
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useEffect } from "react";
+
 
 const DestinationCard: React.FC<DestinationProps> = ({ image, name, description, tags, priceCategory }) => (
   <div className="destination-card-item bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 ease-in-out hover:shadow-sky-500/30 group flex flex-col h-full">
@@ -33,17 +33,7 @@ const DestinationCard: React.FC<DestinationProps> = ({ image, name, description,
 
 // --- DESTINATIONS COMPONENT ---
 const Destinations: React.FC = () => {
-  useEffect(() => {
-    gsap.from('.destination-card-item', {
-      opacity: 0,
-      y: 80,
-      scale: 0.85,
-      duration: 0.8,
-      stagger: 0.18,
-      ease: 'expo.out',
-      scrollTrigger: { trigger: '#destinations', start: 'top 80%', toggleActions: 'play none none none' },
-    });
-  }, []);
+
   
   const destinationsData = [
     {

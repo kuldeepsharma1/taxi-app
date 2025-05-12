@@ -1,25 +1,16 @@
 'use client'
 import { smoothScrollTo } from "@/lib/smoothscroll";
-import gsap from "gsap";
-import { ArrowRight, Phone } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { HeroProps } from "@/types";
 
-const CTA: React.FC = () => {
-    const headerRef = useRef<HTMLElement>(null);
-    useEffect(() => {
-        gsap.from('.cta-content > *', {
-            opacity: 0,
-            y: 50,
-            duration: 0.9,
-            stagger: 0.2,
-            ease: 'expo.out',
-            scrollTrigger: { trigger: '#cta', start: 'top 75%', toggleActions: 'play none none none' },
-        });
-    }, []);
+import { ArrowRight, Phone } from "lucide-react";
+
+
+const CTA: React.FC<HeroProps> = ({headerRef}) => {
+  
 
     return (
         <section id="cta" className="py-24 md:py-32 bg-gradient-to-br from-sky-600 via-sky-500 to-cyan-400 text-white text-center relative overflow-hidden">
-            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/wavecut.png')" }}></div> {/* Subtle pattern */}
+            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url('/wavecut.png')" }}></div> {/* Subtle pattern */}
             <div className="absolute -bottom-1/4 left-0 w-full h-1/2 bg-white/5 rounded-t-full opacity-30 animate-pulse-slowest"></div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 cta-content relative z-10">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-7 drop-shadow-xl tracking-tighter">Your Himalayan Odyssey Awaits.</h2>

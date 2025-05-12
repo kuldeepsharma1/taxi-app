@@ -1,8 +1,7 @@
 'use client'
 import { WhyChooseItemProps } from "@/types";
-import gsap from "gsap";
 import { Car, Headphones, ShieldCheck, Sparkles, Tag, Users } from "lucide-react";
-import { useEffect } from "react";
+
 
 const WhyChooseItem: React.FC<WhyChooseItemProps> = ({ icon: Icon, title, description }) => (
     <div className="why-choose-item flex items-start space-x-5 p-2 group">
@@ -18,23 +17,7 @@ const WhyChooseItem: React.FC<WhyChooseItemProps> = ({ icon: Icon, title, descri
 
 // --- WHY CHOOSE US COMPONENT ---
 const WhyChooseUs: React.FC = () => {
-    useEffect(() => {
-        gsap.from('.why-choose-item', {
-            opacity: 0,
-            x: -70,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: 'expo.out',
-            scrollTrigger: { trigger: '#why-us .grid-cols-1', start: 'top 80%', toggleActions: 'play none none none' }, // Target specific grid for item animation
-        });
-        gsap.from('.why-us-image-container', {
-            opacity: 0,
-            scale: 0.8,
-            duration: 1.2,
-            ease: 'expo.out',
-            scrollTrigger: { trigger: '#why-us', start: 'top 70%', toggleActions: 'play none none none' },
-        });
-    }, []);
+   
 
     const features = [
         { icon: ShieldCheck, title: 'Uncompromising Safety', description: 'Professionally trained chauffeurs, GPS-enabled fleet, and rigorous vehicle maintenance for your peace of mind.' },

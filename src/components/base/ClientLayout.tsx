@@ -1,6 +1,6 @@
 'use client';
 import React, { useRef } from 'react';
-import Home from '@/app/page';
+import Home from '@/app/(guest)/page';
 import Header from './Header';
 import { HomeProps } from '@/types';
 import Footer from './Footer';
@@ -30,7 +30,7 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
     <>
       <Header ref={headerRef} />
       <main>{renderChildren()}</main>
-      <Footer headerRef={headerRef as React.RefObject<HTMLElement>} />
+      <Footer  />
     </>
   );
 }

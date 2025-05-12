@@ -1,6 +1,7 @@
 'use client';
 import { smoothScrollTo } from '@/lib/smoothscroll';
 import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
 import React, { useEffect, useState, forwardRef } from 'react';
 
 
@@ -42,14 +43,14 @@ const Header = forwardRef<HTMLElement>((props, ref) => {
         ${isScrolled || isMobileMenuOpen ? 'bg-white/95 backdrop-blur-xl shadow-2xl py-4' : 'bg-transparent py-6'}`}
     >
       <div className="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
-        <a
-          href="#home"
+        <Link
+          href="/"
           onClick={(e) => handleNavLinkClick(e, 'Home')}
           className={`text-3xl lg:text-4xl font-black tracking-tighter transition-colors duration-300 ease-in-out
             ${isScrolled || isMobileMenuOpen ? 'text-sky-600' : 'text-white'}`}
         >
           Hima<span className={isScrolled || isMobileMenuOpen ? 'text-slate-800' : 'text-sky-300'}>Go</span>
-        </a>
+        </Link>
         <nav className="hidden lg:flex space-x-7 xl:space-x-9 items-center">
           {navLinks.map((item) => (
             <a
@@ -82,14 +83,14 @@ const Header = forwardRef<HTMLElement>((props, ref) => {
       >
         <nav className="flex flex-col space-y-3">
           {navLinks.map((item) => (
-            <a
+            <Link
               key={item}
               href={`#${item.toLowerCase().replace(' ', '-')}`}
               onClick={(e) => handleNavLinkClick(e, item)}
               className="block px-4 py-3.5 rounded-lg text-lg font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600 active:bg-sky-100 transition-all duration-200 ease-in-out"
             >
               {item}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>

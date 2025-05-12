@@ -1,8 +1,5 @@
-'use client'
 import {  ServiceCardProps } from "@/types";
-import gsap from "gsap";
 import { CalendarDays, Car, CheckCircle, MapPin } from "lucide-react";
-import { useEffect } from "react";
 
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, description, index }) => (
@@ -20,27 +17,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, descriptio
   </div>
 );
 
-// --- SERVICES COMPONENT ---
 const Services: React.FC = ()  => {
-  useEffect(() => {
-    gsap.from('.service-card-item', {
-      opacity: 0,
-      y: 80,
-      scale: 0.85,
-      duration: 0.8,
-      stagger: 0.18,
-      ease: 'expo.out',
-      scrollTrigger: { trigger: '#services', start: 'top 80%', toggleActions: 'play none none none' },
-    });
-  }, []);
-
   const servicesData = [
     { icon: Car, title: 'Luxury Local Tours', description: 'Discover Himachal’s gems in chauffeur-driven luxury. Tailored itineraries for discerning travelers seeking comfort and style.' },
     { icon: MapPin, title: 'Premium Outstation Journeys', description: 'Seamless long-distance travel in our top-tier vehicles. Ideal for multi-day explorations or connecting cities with utmost comfort.' },
     { icon: CalendarDays, title: 'Executive Hourly Charters', description: 'Flexible, private car hire for business meetings, special occasions, or personalized city tours at your own pace.' },
     { icon: CheckCircle, title: 'VIP Airport Concierge', description: 'Priority airport transfers with meet & greet services. Start and end your Himalayan escape with effortless sophistication.' },
   ];
-
   return (
     <section id="services" className="py-20 md:py-28 bg-slate-50 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

@@ -1,9 +1,8 @@
 'use client'
 import { TestimonialProps } from "@/types";
-import gsap from "gsap";
 import { MessageSquareQuote, Star } from "lucide-react";
 import Image from "next/image";
-import { useEffect } from "react";
+
 
 
 const TestimonialCard: React.FC<TestimonialProps> = ({ quote, author, location, avatar, rating }) => (
@@ -29,17 +28,7 @@ const TestimonialCard: React.FC<TestimonialProps> = ({ quote, author, location, 
   </div>
 );
 const Testimonials: React.FC = () => {
-  useEffect(() => {
-    gsap.from('.testimonial-item', {
-      opacity: 0,
-      y: 80,
-      scale: 0.85,
-      duration: 0.8,
-      stagger: 0.18,
-      ease: 'expo.out',
-      scrollTrigger: { trigger: '#testimonials', start: 'top 80%', toggleActions: 'play none none none' },
-    });
-  }, []);
+
 
   const testimonialsData = [
     { quote: 'An absolutely flawless experience from booking to drop-off. The car was luxurious, the chauffeur professional, and the scenery breathtaking. HimachalRide made our anniversary trip truly special!', author: 'Rohan & Aisha Mehra', location: 'Mumbai, India', avatar: '/rm.svg', rating: 5 },
